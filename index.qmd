@@ -1,0 +1,163 @@
+---
+title: "Hubungan antara Tingkat Pengangguran dengan Indeks Pembangunan Manusia (IPM) pada Setiap Provinsi di Indonesia Tahun 2023"
+subtitle: "Metode Penelitian Politeknik APP Jakarta"
+author: "Fedy Kurniawan"
+date: 2024-01-23
+number-sections: true
+format:
+  html: default
+  docx: default
+---
+
+![](poltekapp.jpg)
+
+## Pendahuluan
+
+### Latar belakang
+
+Dalam perkembangan ekonomi pada suatu negara, tingkat pengangguran dan Indeks Pembangunan Manusia (IPM) menjadi dua aspek penting yang mencerminkan kesejahteraan masyarakat, di mana pengangguran adalah cerminan dari ketidakseimbangan pasar tenaga kerja dan IPM adalah cerminan standar hidup. Karenanya, penelitian ini akan membahas hubungan antara tingkat pengangguran dan Indeks Pembangunan Manusia (IPM) di seluruh provinsi di Indonesia.
+
+![](peta.jpg)
+
+### Ruang lingkup
+
+Penelitian yang akan dibahas berfokus kepada hubungan antara kedua variabel, yaitu Tingkat Pngangguran dan Indeks Pembangunan Manusia (IPM) di seluruh provinsi di Indonesia. Ruang lingkup penelitian ini mencakup penggunaan data statistik pada tahun 2023 yang relevan.
+
+### Rumusan masalah
+
+1. Bagaimana hubungan antara tingkat pengangguran dan Indeks Pembangunan Manusia di seluruh provinsi di Indonesia?
+
+2. Apakah tingkat pengangguran dapat dianggap sebagai faktor yang signifikan dalam menjelaskan variasi dalam Indeks Pembangunan Manusia?
+
+### Tujuan dan manfaat penelitian
+
+Tujuan dari penelitian ini adalah untuk memahami sejauh mana tingkat pengangguran dapat mempengaruhi pembangunan manusia. 
+
+Manfaat penelitian ini adalah untuk memberikan pandangan dan wawasan yang lebih dalam kepada masyarakat maupun pemerintah mengenai pentingnya mengatasi masalah pengangguran untuk meningkatkan pembangunan manusia.
+
+### Package
+
+Package yang digunakan dalam penelitian ini:
+
+```{r}
+#| warning: false
+#| echo: true
+library("readxl")
+library("tidyverse")
+library("png")
+library("ggplot2")
+```
+
+## Studi pustaka
+
+Pengangguran
+
+Secara umum pengertian pengangguran adalah orang yang belum memiliki pekerjaan tetap atau Angkatan kerja yang sedang mencari pekerjaan.
+
+Indeks Pembangunan Manusia (IPM)
+
+Menurut Marhoji dan Nurkhasanah (2019:56) menyatakan bahwa Indeks Pembangunan Manusia (IPM) merupakan suatu angka yang mengukur capaian pembangunan manusia berbasis sejumlah komponen dasar kualitas hidup yang dapat mempengaruhi tingkat produktivitas yang dihasilkan oleh seseorang.
+
+## Metode penelitian
+
+### Data
+
+Data yang digunakan berupa Tingkat Pengangguran Terbuka dan Indeks Pembangunan Manusia di seluruh provinsi di Indonesia pada tahun 2023.
+
+| Provinsi             | Pengangguran   | IPM           |
+|----------------------|----------------|---------------|
+| Aceh                 | 6.03           | 74.4          |
+| Sumatera Utara       | 5.89           | 73.37         |
+| Sumatera Barat       | 5.94           | 73.75         |
+| Riau                 | 4.23           | 74.04         |
+| Jambi                | 4.53           | 72.77         |
+| Sumatera Selatan     | 4.11           | 71.62         |
+| Bengkulu             | 3.42           | 72.78         |
+| Lampung              | 4.23           | 71.15         |
+| Kp. Bangka Belitung  | 4.56           | 72.85         |
+| Kp. Riau             | 6.80           | 77.11         |
+| DKI Jakarta          | 6.53           | 82.46         |
+| Jawa Barat           | 7.44           | 73.74         |
+| Jawa Tengah          | 5.13           | 73.39         |
+| DI Yogyakarta        | 3.69           | 81.07         |
+| Jawa Timur           | 4.88           | 73.38         |
+| Banten               | 7.52           | 73.87         |
+| Bali                 | 2.69           | 77.1          |
+| NTB                  | 2.80           | 70.2          |
+| NTT                  | 3.14           | 66.68         |
+| Kalimantan Barat     | 5.05           | 69.41         |
+| Kalimantan Tengah    | 4.10           | 72.2          |
+| Kalimantan Selatan   | 4.31           | 72.5          |
+| Kalimantan Timur     | 5.31           | 78.2          |
+| Kalimantan Utara     | 4.01           | 72.49         |
+| Sulawesi Utara       | 6.10           | 74.36         |
+| Sulawesi Tengah      | 2.95           | 70.95         |
+| Sulawesi Selatan     | 4.33           | 73.46         |
+| Sulawesi Tenggara    | 3.15           | 72.79         |
+| Gorontalo            | 3.06           | 70.45         |
+| Sulawesi Barat       | 2.27           | 67.55         |
+| Maluku               | 6.31           | 70.94         |
+| Maluku Utara         | 4.31           | 70.21         |
+| Papua Barat          | 5.38           | 66.66         |
+| Papua                | 2.67           | 62.25         |
+
+### Metode analisis
+
+Analisis yang digunakan adalah pengumpulan data melalui Badan Pusat Statistika. 
+
+![](bps.png)
+
+Selain itu, penelitian ini menggunakan analisis regresi untuk mengetahui sejauh mana hubungan antara tingkat pengangguran dengan Indeks Pembangunan Manusia (IPM) saling mempengaruhi. Spesifikasi yang dilakukan adalah:
+
+$$
+y_{t}=\beta_0 + \beta_1 x_t+\mu_t
+$$ di mana $y_t$ adalah tingkat pengangguran terbuka dan $x_t$ adalah indeks pembangunan manusia.
+
+## Pembahasan
+
+### Pembahasan masalah
+
+Berikut merupakan visualisasi hubungan yang ditampilkan dari data yang telah dikumpulkan.
+
+```{r}
+library("readxl")
+dat<-read_excel("uasmetopel.xlsx")
+head(dat)
+```
+
+```{r}
+library("dplyr")
+library("ggplot2")
+ggplot(data=dat,aes(x=tpt,y=ipm)) +
+  geom_point(color="gold",size=2) +
+  labs(title="Hubungan Tingkat Pengangguran & IPM",
+       x="Tingkat Pengangguran",
+       y="Indeks Pembangunan Manusia",
+       caption = "Sumber: Badan Pusat Statistik") +
+  theme_bw()
+```
+
+### Analisis masalah
+
+Hasil Regresinya adalah sebagai berikut.
+
+```{r}
+reg<-lm(ipm~tpt,data=dat)
+summary(reg)
+```
+
+## Kesimpulan
+
+Hasil analisis menunjukkan bahwa terdapat hubungan yang signifikan antara kedua variabel tersebut. Koefisien regresi untuk pengangguran (tpt) adalah 1.0997 dengan nilai p-value sebesar 0.0177, menandakan bahwa tingkat pengangguran memiliki dampak yang signifikan terhadap IPM.
+
+Oleh karena itu, perlu adanya upaya lebih lanjut dari masyarakat itu sendiri ataupun pemerintah. Implementasi program pelatihan dan peningkatan keterampilan kerja dapat dilakukan untuk mengurangi tingkat pengangguran, sehingga dapat meningkatkan produktivitas dan pendapatan masyarakat. Upaya tersebut diharapkan dapat mendukung peningkatan IPM secara berkelanjutan.
+
+## Referensi
+
+BPS Prov Sumatera Selatan. (t.t.). Diambil 21 Januari 2024, dari https://sumsel.bps.go.id/indicator/26/593/1/-metode-baru-indeks-pembangunan-manusia-menurut-provinsi-.html
+
+Indonesia, B. P. S. (t.t.). Tingkat Pengangguran Terbuka Menurut Provinsi—Tabel Statistik. Diambil 21 Januari 2024, dari https://www.bps.go.id/id/statistics-table/2/NTQzIzI=/tingkat-pengangguran-terbuka--agustus-2023.html
+
+Kasnelly, S., & Wardiah, J. (2021). Pengaruh Tingkat Pengangguran Dan Tingkat Kemiskinan Terhadap Indeks Pembangunan Manusia Di Indonesia. Al-Mizan : Jurnal Ekonomi Syariah, 4(II), Article II. https://www.ejournal.an-nadwah.ac.id/index.php/almizan/article/view/309
+
+Suryaningtyas, R. Y. I. (t.t.). Diajukan Kepada Fakultas Ekonomi dan Bisnis Untuk Memenuhi Syarat Meraih Gelar Sarjana Ekonomi (S.E).
